@@ -77,6 +77,11 @@ describe('Round', function() {
     expect(round.calculatePercentCorrect()).to.equal(`${66.67}%`)
   })
 
-  
+  it('should have a method that prints the following to the console: ‘** Round over! ** You answered <>% of the questions correctly!’', function() {
+    round.takeTurn('object');
+    round.takeTurn('wrong Answer');
+    round.takeTurn('mutator method');
+    expect(round.endRound()).to.equal(`** Round over! ** You answered 66.67% of the questions correctly!`)
+  })
 
 })
